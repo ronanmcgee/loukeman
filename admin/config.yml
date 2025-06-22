@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: ronanmcgee/loukeman
+  name: git-gateway
   branch: main
-  auth_type: implicit
-  app_id: 80879
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
