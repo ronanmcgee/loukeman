@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: ronanmcgee/loukeman
   branch: main
-  login: true
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
