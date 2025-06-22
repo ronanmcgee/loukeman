@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "dates"
+    label: "Dates"
+    folder: "content/dates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{city}}"
+    fields:
+      - { label: "Date", name: "date", widget: "datetime", format: "MM.DD.YY" }
+      - { label: "City", name: "city", widget: "string" }
+      - { label: "Description", name: "desc", widget: "string" }
+      - { label: "Link (optional)", name: "link", widget: "string", required: false }
