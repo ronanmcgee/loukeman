@@ -1,0 +1,2 @@
+/admin/index.html
+  Content-Security-Policy: script-src 'self' 'unsafe-eval'; object-src 'none';
