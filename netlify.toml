@@ -1,7 +1,8 @@
-[functions]
-  directory = "functions"
+[build]
+  publish = "dist"
+  functions = "netlify/functions"
 
 [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
+  from = "/api/auth/callback"
+  to = "/.netlify/functions/oauth-callback"
   status = 200
