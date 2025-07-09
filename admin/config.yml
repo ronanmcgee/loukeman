@@ -1,12 +1,12 @@
 backend:
   name: github
-  repo: ronanmcgee/loukeman.com
+  repo: ronanmcgee/loukeman
   branch: main
   base_url: https://loukeman.com
   auth_endpoint: /.netlify/functions/auth
 
-# CMS config with site_url
 site_url: https://loukeman.com
+
 
 
 media_folder: "img/uploads"
