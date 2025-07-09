@@ -3,18 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script defer src="https://unpkg.com/decap-cms@2.10.1/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
   </head>
   <body>
     <div id="nc-root"></div>
     <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        if (typeof CMS !== "undefined") {
-          CMS.init();
-        } else {
-          console.error("CMS not loaded");
-        }
-      });
+      CMS.init();
     </script>
   </body>
 </html>
