@@ -1,11 +1,11 @@
 backend:
   name: github
-  repo: yourusername/loukeman
+  repo: ronanmcgee/loukeman
   branch: main
-  base_url: https://yoursite.netlify.app
+  base_url: https://loukeman.com
   auth_endpoint: /.netlify/functions/auth
 
-site_url: https://yoursite.netlify.app
+site_url: loukeman.com
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
