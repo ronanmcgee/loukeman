@@ -3,7 +3,7 @@ backend:
   repo: yourusername/loukeman.com
   branch: main
   base_url: https://loukeman.com
-  auth_endpoint: /api/auth
+  auth_endpoint: /.netlify/functions/auth
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
