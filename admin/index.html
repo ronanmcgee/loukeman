@@ -3,17 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
+    <script src="https://unpkg.com/decap-cms@2.10.1/dist/decap-cms.js"></script>
   </head>
   <body>
     <div id="nc-root"></div>
-    
-    <!-- Load Decap CMS (MUST come before CMS.init) -->
-<script src="https://unpkg.com/decap-cms@2.10.1/dist/decap-cms.js"></script>
-
-
-    <!-- Now call init -->
     <script>
-      window.CMS_MANUAL_INIT = true;
+      // Decap CMS must be loaded above before this runs
       CMS.init();
     </script>
   </body>
