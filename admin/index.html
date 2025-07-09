@@ -6,6 +6,14 @@
     <script src="/admin/js/decap-cms.js"></script>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+    <script>
+      if (typeof CMS !== 'undefined') {
+        CMS.init();
+      }
+    </script>
   </body>
 </html>
 
