@@ -1,6 +1,6 @@
 {
   "date": "2025-01-01T00:00:00Z",
-  "location": "Placeholder",
-  "venue": "Test Venue",
+  "location": "Test City",
+  "venue": "Sample Venue",
   "tickets": "https://example.com"
 }

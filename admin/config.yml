@@ -1,13 +1,11 @@
 backend:
   name: github
-  repo: ronanmcgee/loukeman
+  repo: yourusername/loukeman
   branch: main
-  base_url: https://loukeman.com
+  base_url: https://yoursite.netlify.app
   auth_endpoint: /.netlify/functions/auth
 
-site_url: https://loukeman.com
-
-
+site_url: https://yoursite.netlify.app
 
 media_folder: "img/uploads"
 public_folder: "/img/uploads"
@@ -19,7 +17,7 @@ collections:
     create: true
     format: "json"
     fields:
-      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "date", label: "Date", widget: "datetime", format: "YYYY-MM-DD" }
       - { name: "location", label: "Location", widget: "string" }
       - { name: "venue", label: "Venue", widget: "string" }
       - { name: "tickets", label: "Ticket URL", widget: "string", required: false }
