@@ -5,5 +5,12 @@
     <title>Content Manager</title>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- This div is where the CMS UI gets mounted -->
+    <div id="nc-root"></div>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+      CMS.init();
+    </script>
+  </body>
 </html>
