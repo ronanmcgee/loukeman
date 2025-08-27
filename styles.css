@@ -52,6 +52,15 @@ a:hover {
 
 }
 
+/* Render DATES heading without special HTML in the first row on desktop */
+.dates-grid { position: relative; }
+.dates-grid::before {
+  content: "DATES";
+  position: absolute;
+  top: 0; /* aligns with top of first row */
+  left: 0; /* aligns to column 1 start */
+}
+
 .date {
   grid-column: 2 / 3;
 }
@@ -70,17 +79,6 @@ a:hover {
 
 .row-link:hover .row {
   color: hotpink;
-}
-
-.row-link-inline {
-  display: contents;
-}
-
-.row-link-inline:hover .date,
-.row-link-inline:hover .city,
-.row-link-inline:hover .desc {
-  color: hotpink;
-  cursor: pointer;
 }
 
 
@@ -170,6 +168,14 @@ a:hover {
     padding-top: 48px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  /* Mobile: put DATES above as a full-width heading */
+  .dates-grid::before {
+    position: static;
+    display: block;
+    content: "DATES";
+    margin-bottom: 16px;
   }
 
   .row,
