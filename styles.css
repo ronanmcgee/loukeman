@@ -52,13 +52,13 @@ a:hover {
 
 }
 
-/* Render DATES heading without special HTML in the first row on desktop */
+
 .dates-grid { position: relative; }
 .dates-grid::before {
   content: "DATES";
   position: absolute;
-  top: 0; /* aligns with top of first row */
-  left: 0; /* aligns to column 1 start */
+  top: 0;
+  left: 0;
 }
 
 .date {
@@ -79,6 +79,11 @@ a:hover {
 
 .row-link:hover .row {
   color: hotpink;
+}
+
+
+.row.past {
+  text-decoration: line-through;
 }
 
 
@@ -170,7 +175,7 @@ a:hover {
     padding-right: 24px;
   }
 
-  /* Mobile: put DATES above as a full-width heading */
+
   .dates-grid::before {
     position: static;
     display: block;
