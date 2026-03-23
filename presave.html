@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loukeman — Pre-save</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 2rem 1.5rem 3rem;
+      background: #000;
+      color: #fff;
+      font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+
+    .timer {
+      text-align: center;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .timer__label {
+      font-size: 10px;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.14em;
+    }
+
+    .timer__values {
+      font-size: clamp(14px, 3.5vw, 18px);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer__values.done {
+      letter-spacing: 0.1em;
+    }
+
+    .logo {
+      width: min(72vw, 320px);
+      height: auto;
+      display: block;
+    }
+
+    .presave {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .presave:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .back {
+      position: fixed;
+      top: 1.25rem;
+      left: 1.25rem;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.45);
+      text-decoration: none;
+    }
+
+    .back:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← Home</a>
+
+  <div class="timer" aria-live="polite">
+    <div class="timer__label">Eastern (NYC)</div>
+    <div class="timer__values" id="countdown">—</div>
+  </div>
+
+  <img class="logo" src="img/LM-1.png" width="640" height="640" alt="Loukeman" />
+
+  <!-- Replace # with your full pre-save URL (keeps target="_blank" for external smart links). -->
+  <a class="presave" id="presave-btn" href="#" target="_blank" rel="noopener noreferrer">Pre-save</a>
+
+  <script>
+    (function () {
+      /**
+       * Midnight at the start of April 24 in US Eastern time.
+       * Late April is always under daylight time (EDT, UTC−4), not standard EST.
+       */
+      function targetApril24MidnightEastern() {
+        const now = Date.now();
+        let y = new Date().getFullYear();
+        let target = new Date(`${y}-04-24T00:00:00-04:00`).getTime();
+        if (now >= target) {
+          target = new Date(`${y + 1}-04-24T00:00:00-04:00`).getTime();
+        }
+        return target;
+      }
+
+      const el = document.getElementById("countdown");
+      const targetMs = targetApril24MidnightEastern();
+
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function tick() {
+        const diff = targetMs - Date.now();
+        if (diff <= 0) {
+          el.textContent = "00 : 00 : 00";
+          el.classList.add("done");
+          return;
+        }
+        const s = Math.floor(diff / 1000);
+        const days = Math.floor(s / 86400);
+        const h = Math.floor((s % 86400) / 3600);
+        const m = Math.floor((s % 3600) / 60);
+        const sec = s % 60;
+        el.textContent =
+          (days > 0 ? `${days}d ` : "") +
+          `${pad(h)} : ${pad(m)} : ${pad(sec)}`;
+      }
+
+      tick();
+      setInterval(tick, 1000);
+
+      var btn = document.getElementById("presave-btn");
+      btn.addEventListener("click", function (e) {
+        if (btn.getAttribute("href") === "#") e.preventDefault();
+      });
+    })();
+  </script>
+</body>
+</html>
