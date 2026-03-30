@@ -34,11 +34,11 @@
     }
 
     .timer__label {
-      font-size: 10px;
-      text-transform: uppercase;
-      opacity: 0.55;
+      font-size: clamp(16px, 4vw, 22px);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      opacity: 0.95;
       margin-bottom: 0.75rem;
-      letter-spacing: 0.14em;
     }
 
     .timer__values {
@@ -93,7 +93,7 @@
   <a class="back" href="index.html">← Home</a>
 
   <div class="timer" aria-live="polite">
-    <div class="timer__label">Eastern (NYC)</div>
+    <div class="timer__label">SD-3</div>
     <div class="timer__values" id="countdown">—</div>
   </div>
 
@@ -104,11 +104,8 @@
 
   <script>
     (function () {
-      /**
-       * Midnight at the start of April 24 in US Eastern time.
-       * Late April is always under daylight time (EDT, UTC−4), not standard EST.
-       */
-      function targetApril24MidnightEastern() {
+      /** Countdown to April 24, 00:00. */
+      function targetApril24() {
         const now = Date.now();
         let y = new Date().getFullYear();
         let target = new Date(`${y}-04-24T00:00:00-04:00`).getTime();
@@ -119,7 +116,7 @@
       }
 
       const el = document.getElementById("countdown");
-      const targetMs = targetApril24MidnightEastern();
+      const targetMs = targetApril24();
 
       function pad(n) {
         return String(n).padStart(2, "0");

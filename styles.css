@@ -160,6 +160,60 @@ a:hover {
   grid-column: 5 / span 4;
 }
 
+.svg-grid .row img:only-child {
+  grid-column: 3 / span 5;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 104px;
+  text-align: center;
+}
+
+.hero-logo {
+  width: min(72vw, 320px);
+  height: auto;
+  display: block;
+}
+
+.countdown {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.06em;
+}
+
+/* Rainbow text */
+.rainbow-text {
+  background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00cc00, #00bbff, #8800ff, #ff00aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sign Up button */
+.signup-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+a.signup-btn:hover {
+  border-color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+
 @media (max-width: 1076px) and (min-width: 701px) {
     .container {
         margin-left: 24px;
@@ -240,6 +294,19 @@ a:hover {
   .svg-grid .row img:first-child,
   .svg-grid .row img:last-child {
     grid-column: span 4;
+  }
+
+  .svg-grid .row img:only-child {
+    grid-column: span 4;
+  }
+
+  .hero {
+    padding-bottom: 84px;
+  }
+
+  .hero-logo {
+    width: 80vw;
+    max-width: 280px;
   }
 
 }
