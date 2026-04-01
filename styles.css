@@ -213,6 +213,28 @@ a.signup-btn:hover {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
 }
 
+/* Hero nav */
+.hero-nav {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hero-nav a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  transition: opacity 0.2s;
+}
+
+.hero-nav a:hover {
+  opacity: 0.6;
+}
+
 
 @media (max-width: 1076px) and (min-width: 701px) {
     .container {
@@ -301,12 +323,16 @@ a.signup-btn:hover {
   }
 
   .hero {
-    padding-bottom: 84px;
+    padding-bottom: 20px;
   }
 
   .hero-logo {
     width: 80vw;
     max-width: 280px;
+  }
+
+  .hero-nav {
+    gap: 2.5rem;
   }
 
 }
