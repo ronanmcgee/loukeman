@@ -209,6 +209,14 @@ a:hover {
   background-position: 100% 0;
 }
 
+.rainbow-static {
+  transition: none;
+}
+
+.rainbow-static:hover {
+  background-position: 0 0;
+}
+
 /* Sign Up button */
 .signup-btn {
   display: inline-block;
