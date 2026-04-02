@@ -180,6 +180,13 @@ a:hover {
   display: block;
 }
 
+.album-title {
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: #fff;
+  margin-bottom: -2.25rem;
+}
+
 .countdown {
   font-variant-numeric: tabular-nums;
   font-size: 14px;
@@ -189,10 +196,17 @@ a:hover {
 
 /* Rainbow text */
 .rainbow-text {
-  background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00cc00, #00bbff, #8800ff, #ff00aa);
+  background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00cc00, #00bbff, #8800ff, #ff00aa, #ff0000);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: background-position 0.4s ease;
+}
+
+.rainbow-text:hover,
+.row-link:hover .rainbow-text {
+  background-position: 100% 0;
 }
 
 /* Sign Up button */
