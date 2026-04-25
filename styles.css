@@ -184,14 +184,6 @@ a:hover {
   font-size: 14px;
   letter-spacing: 0.14em;
   color: #fff;
-  margin-bottom: -2.25rem;
-}
-
-.countdown {
-  font-variant-numeric: tabular-nums;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.06em;
 }
 
 /* Rainbow text */
